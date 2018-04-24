@@ -1,0 +1,42 @@
+<div class="header_con">
+    <div class="header">
+        <div class="welcome fl">欢迎来到天天生鲜!</div>
+        <div class="fr">
+            {% if request.session.user_name|default:"" != "" %}
+                <div class="login_btn fl">
+                    欢迎您：<em>{{ request.session.user_name }}</em>
+                    <span>|</span>
+                    <a href="{% url 'df_user:logout' %}">注销</a>
+                </div>
+            {% else %}
+                <div class="login_btn fl">
+                    {% if cookie_name %}
+                        <div class="user_link fl">
+                            请登录：<em>{{ cookie_name }}</em>
+                        </div>
+                    {% endif %}
+                    <span>|</span>
+                    <a href="{% url 'df_user:login' %}">登录</a>
+                    <span>|</span>
+                    <a href="{% url 'df_user:register' %}">注册</a>
+
+
+                </div>
+            {% endif %}
+
+
+            <div class="user_link fl">
+                <span>|</span>
+                <a href="{% url 'df_user:user_center_info' %}">用户中心</a>
+                <span>|</span>
+            </div>
+            <div class="user_link fl">
+                <a href="{% url 'dailyfresh:cart' %}">我的购物车</a>
+                <span>|</span>
+                <a href="{% url 'df_user:user_center_order' %}">我的订单</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>

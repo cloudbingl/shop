@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Django stuff:
+*.log
+.static_storage/
+.media/
+local_settings.py
+
+
+# Environments
+venv/
+*.toc
+*.seg
+MAIN_WRITELOCK*
